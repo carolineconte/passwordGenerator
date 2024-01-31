@@ -1,0 +1,190 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500&family=Tomorrow:ital,wght@0,500;0,700;1,500;1,700;1,800&display=swap');
+
+:root {
+  --yellow: #f8ef00;
+  --yellow-hover: #aca607;
+  --cian: #00f0ff;
+  --cian-transparent: #00eeff60;
+  --red: #ff003c;
+  --black: #000;
+  --white: #fafafa;
+  --grey: #bbb;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Tomorrow', sans-serif;
+  width: 100%;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--black);
+  color: white;
+}
+
+h1 {
+  margin: 5rem 5rem 1rem;
+  color: var(--yellow);
+  font-size: 3em;
+  line-height: 70px;
+  letter-spacing: 10px;
+  font-style: italic;
+  font-size: 100px;
+}
+
+.containerMain {
+  display: flex;
+  gap: 2rem;
+}
+
+main,
+.container-password {
+  padding: 2rem 5rem;
+}
+
+.slider {
+  -webkit-appearance: none;
+  border-radius: 5px;
+  height: 5px;
+  background-color: var(--cian-transparent);
+  margin-bottom: 1rem;
+  outline: none;
+  width: 70%;
+  display: block;
+  margin: 1rem 0;
+}
+
+.password {
+  display: block;
+  background-color: var(--cian-transparent);
+  padding: 1rem;
+  border: 1px solid var(--cian);
+  margin: 1rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: transform 0.5s;
+  cursor: pointer;
+  width: 70%;
+}
+
+.password:hover {
+  transform: scale(1.05);
+}
+
+i {
+  text-align: right;
+}
+
+.password:hover i {
+  color: var(--cian);
+}
+
+.btn-cta,
+.tooltip {
+  padding: .5rem;
+  margin-top: 1rem;
+  background-color: var(--yellow);
+  color: var(--black);
+  font-family: 'Barlow', sans-serif;
+}
+
+.btn-cta {
+  border: none;
+  width: 30%;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 1.2em;
+  margin-bottom: 1rem;
+}
+
+.btn-cta:hover {
+  background-color: var(--yellow-hover);
+}
+
+.btn-cta i {
+  display: inline;
+  margin-left: 1rem;
+  color: var(--red);
+}
+
+.tooltip {
+  visibility: hidden;
+}
+
+.container-password:hover .tooltip {
+  visibility: visible;
+}
+
+.checkboxContainer {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+}
+
+main div {
+  display: grid;
+  grid-template-columns: auto auto;
+  margin-top: .5rem;
+}
+
+.error {
+  color: var(--red);
+  padding: .5rem;
+  margin: 1rem;
+  border: 1px solid var(--red);
+  border-radius: 10px;
+  width: fit-content;
+  display: block;
+  background-color: var(--grey);
+}
+
+.checkboxContainer input {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  position: relative;
+}
+
+.checkboxContainer label {
+  font-weight: 500;
+  font-style: italic;
+}
+
+.hide {
+  display: none;
+}
+
+#value {
+  margin: 0 .2rem;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.history {
+  position: fixed;
+  right: 0;
+  top: 5rem;
+  width: 20%;
+}
+
+.historyCard {
+  width: 70%;
+  display: flex;
+  justify-content: space-between;
+  padding: .5rem 1rem;
+  border: 1px solid var(--grey);
+  margin-top: 1rem;
+  background-color: rgba(187, 187, 187, 0.511);
+  font-family: 'Barlow', sans-serif;
+  font-weight: bold;
+  cursor: pointer;
+  margin-left: 0;
+}
+
+.historyCard:hover {
+  background-color: rgba(187, 187, 187, 0.815);
+}

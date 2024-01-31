@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="keywords" content="Password generator">
+  <title>Password generator</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://kit.fontawesome.com/fac993a757.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+  <h1>Password <br>  Generator</h1>
+ 
+    <main>
+      <span>Password with <span id="value"></span> characters</span>
+      <input id="slider" class="slider" type="range" min="5" max="25" value="10">
+      <button id="btn" class="btn-cta" onclick="generatePassword()">Generate password<i
+          class="fa-solid fa-right-long"></i>
+      </button>
+      <span id="error" class="error hide"></span>
+
+      <div>
+        <div class="checkboxContainer">
+          <input type="checkbox" name="uppercase" id="uppercase">
+          <label for="uppercase">Uppercase letters</label>
+        </div>
+        <div class="checkboxContainer">
+          <input type="checkbox" name="lowercase" id="lowercase">
+          <label for="lowercase">Lowercase letters</label>
+        </div>
+        <div class="checkboxContainer">
+          <input type="checkbox" name="numbers" id="numbers">
+          <label for="numbers">Numbers</label>
+        </div>
+        <div class="checkboxContainer">
+          <input type="checkbox" name="symbols" id="symbols">
+          <label for="symbols">Symbols</label>
+        </div>
+      </div>
+    </main>
+
+    <div class="history">
+      <h2>Password history</h2>
+      <div id="passHistory">
+
+      </div>
+    </div>
+
+  <div onclick="copyPassword()" id="container-password" class="container-password hide">
+    <span class="title">Your generated password:</span>
+    <span class="password">
+      <p id="password"></p><i class="fa-solid fa-copy"></i>
+    </span>
+    <span class="tooltip">Clique na senha para copiar</span>
+  </div>
+
+
+  <script src="script.js"></script>
+</body>
+
+</html>
