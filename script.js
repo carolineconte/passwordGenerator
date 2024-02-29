@@ -85,14 +85,25 @@ function generatePassword() {
     pass += charset.charAt(Math.floor(Math.random() * n))
   }
 
-  // Salva a senha no localStorage
-
-  history.push(pass);
-  localStorage.setItem('history', JSON.stringify(history));
-
   containerPassword.classList.remove('hide');
   password.innerHTML = pass
   newPassword = pass
+
+  // Verifica se a senha já existe no histórico
+  if (!history.includes(pass)) {
+    // Adiciona a senha ao histórico e ao localStorage apenas se ela não existir
+    history.push(pass);
+    localStorage.setItem('history', JSON.stringify(history));
+
+    const historyCard = document.createElement('span');
+    historyCard.className = 'historyCard';
+    historyCard.innerHTML = `${pass} <i class="fa-solid fa-copy"></i>`;
+    historyCard.addEventListener('click', function () {
+      copy(pass);
+    });
+
+    containerHistory.appendChild(historyCard);
+  }
 }
 
 function copy(pass) {
