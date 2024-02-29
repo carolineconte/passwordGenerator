@@ -53,6 +53,25 @@ sliderElement.oninput = function () {
   sizePassword.innerHTML = this.value
 }
 
+let history = localStorage.getItem('history') ? JSON.parse(localStorage.getItem('history')) : [];
+
+// Se houver senhas salvas, exibe-as na página
+if (history.length > 0) {
+
+  history.forEach(password => {
+    const historyCard = document.createElement('span');
+    historyCard.className = 'historyCard';
+    historyCard.innerHTML = `${password} <i class="fa-solid fa-copy"></i>`;
+    historyCard.addEventListener('click', function () {
+      copy(password);
+    });
+
+    containerHistory.appendChild(historyCard);
+  });
+} else {
+  console.log('No password saved');
+}
+
 function generatePassword() {
   //Se l'utente non aggiunge alcun tipo di carattere
   if (!charset) {
@@ -66,21 +85,14 @@ function generatePassword() {
     pass += charset.charAt(Math.floor(Math.random() * n))
   }
 
+  // Salva a senha no localStorage
+
+  history.push(pass);
+  localStorage.setItem('history', JSON.stringify(history));
+
   containerPassword.classList.remove('hide');
   password.innerHTML = pass
   newPassword = pass
-
-  // Adicionar cada senha ao histórico
-  const historyCard = document.createElement('span');
-  historyCard.className = 'historyCard';
-  historyCard.innerHTML = `${pass} <i class="fa-solid fa-copy"></i>`;
-  // // Salvar as senhas do usuario ao local storage
-  // document.getElementById('historyContainer').appendChild(historyCard);
-
-  historyCard.addEventListener('click', function () {
-    copy(pass);
-  });
-  containerHistory.appendChild(historyCard);
 }
 
 function copy(pass) {
