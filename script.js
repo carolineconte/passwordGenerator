@@ -74,8 +74,8 @@ function generatePassword() {
   const historyCard = document.createElement('span');
   historyCard.className = 'historyCard';
   historyCard.innerHTML = `${pass} <i class="fa-solid fa-copy"></i>`;
-  // Salvar as senhas do usuario ao local storage
-  document.getElementById('historyContainer').appendChild(historyCard);
+  // // Salvar as senhas do usuario ao local storage
+  // document.getElementById('historyContainer').appendChild(historyCard);
 
   historyCard.addEventListener('click', function () {
     copy(pass);
