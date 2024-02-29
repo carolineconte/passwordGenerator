@@ -106,6 +106,12 @@ function generatePassword() {
   }
 }
 
+function clearHistory() {
+  localStorage.removeItem('history');
+  // Remove todos os elementos do contêiner do histórico na página
+  containerHistory.innerHTML = '';
+}
+
 function copy(pass) {
   navigator.clipboard.writeText(newPassword)
 }
