@@ -11,9 +11,8 @@
 </head>
 
 <body>
-
-  <h1>Password <br>  Generator</h1>
- 
+  <div class="conatiner">
+    <h1>Password <br> Generator</h1>
     <main>
       <span>Password with <span id="value"></span> characters</span>
       <input id="slider" class="slider" type="range" min="5" max="25" value="10">
@@ -42,21 +41,20 @@
       </div>
     </main>
 
-    <div class="history">
-      <h2>Password history</h2>
-      <div id="passHistory">
-
-      </div>
+    <div onclick="copyPassword()" id="container-password" class="container-password hide">
+      <span class="title">Your generated password:</span>
+      <span class="password">
+        <p id="password"></p><i class="fa-solid fa-copy"></i>
+      </span>
+      <span class="tooltip">Click to copy</span>
     </div>
-
-  <div onclick="copyPassword()" id="container-password" class="container-password hide">
-    <span class="title">Your generated password:</span>
-    <span class="password">
-      <p id="password"></p><i class="fa-solid fa-copy"></i>
-    </span>
-    <span class="tooltip">Click to copy</span>
   </div>
 
+  <div class="history">
+    <h2>Password history</h2>
+    <div id="passHistory">
+    </div>
+  </div>
 
   <script src="script.js"></script>
 </body>

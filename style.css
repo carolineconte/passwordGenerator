@@ -15,34 +15,28 @@
   margin: 0;
   padding: 0;
   font-family: 'Tomorrow', sans-serif;
-  width: 100%;
-  margin: 0 auto;
   box-sizing: border-box;
 }
 
 body {
   background-color: var(--black);
   color: white;
+  width: 90%;
+  margin: 0 auto;
 }
 
 h1 {
-  margin: 5rem 5rem 1rem;
+  margin: 2rem auto;
   color: var(--yellow);
   font-size: 3em;
-  line-height: 70px;
+  line-height: 40px;
   letter-spacing: 10px;
   font-style: italic;
-  font-size: 100px;
-}
-
-.containerMain {
-  display: flex;
-  gap: 2rem;
 }
 
 main,
 .container-password {
-  padding: 2rem 5rem;
+  padding: 1rem;
 }
 
 .slider {
@@ -52,7 +46,7 @@ main,
   background-color: var(--cian-transparent);
   margin-bottom: 1rem;
   outline: none;
-  width: 70%;
+  width: 90%;
   display: block;
   margin: 1rem 0;
 }
@@ -94,7 +88,6 @@ i {
 
 .btn-cta {
   border: none;
-  width: 30%;
   font-weight: bold;
   cursor: pointer;
   font-size: 1.2em;
@@ -165,26 +158,65 @@ main div {
 }
 
 .history {
-  position: fixed;
-  right: 0;
-  top: 5rem;
-  width: 20%;
+  margin: 1rem auto;
 }
 
 .historyCard {
-  width: 70%;
+  width: 100%;
   display: flex;
   justify-content: space-between;
   padding: .5rem 1rem;
   border: 1px solid var(--grey);
-  margin-top: 1rem;
   background-color: rgba(187, 187, 187, 0.511);
   font-family: 'Barlow', sans-serif;
   font-weight: bold;
   cursor: pointer;
-  margin-left: 0;
+  margin-top: 1rem;
 }
 
 .historyCard:hover {
   background-color: rgba(187, 187, 187, 0.815);
+}
+
+@media screen and (min-width: 900px) {
+  body {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .conatiner {
+    flex-grow: 1;
+  }
+
+  h1 {
+    margin: 5rem 5rem 1rem;
+    font-size: 3em;
+    line-height: 70px;
+  }
+
+  .containerMain {
+    display: flex;
+    gap: 2rem;
+  }
+
+  main,
+  .container-password {
+    padding: 2rem 5rem;
+  }
+
+  .history {
+    display: flex;
+    flex-direction: column;
+    justify-content:right ;
+    align-items: end;
+    width: 45%;
+  }
+
+  .btn-cta {
+    width: 30%;
+  }
+
+  .slider {
+    width: 60%;
+  }
 }
